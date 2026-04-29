@@ -1,22 +1,36 @@
 :root {
-    --font-family-base: Inter, Roboto, "Segoe UI", Arial, Helvetica, sans-serif;
-    --font-family-accent: "Arial Narrow", Roboto Condensed, var(--font-family-base);
+    --font-family-base: Arial, Helvetica, sans-serif;
+    --font-family-condensed: "Roboto Condensed", "Arial Narrow", Arial, Helvetica, sans-serif;
+    --font-family-accent: var(--font-family-condensed);
 
-    --color-bg-primary: #090c12;
-    --color-bg-overlay: rgba(9, 12, 18, 0.82);
-    --color-bg-surface: rgba(18, 20, 28, 0.78);
-    --color-bg-surface-strong: rgba(24, 26, 34, 0.92);
-    --color-bg-control: rgba(31, 31, 34, 0.88);
-    --color-bg-control-active: rgba(111, 37, 15, 0.72);
+    --color-general-white-spanish: #e9e2bf;
+    --color-general-par: #4e4e4e;
+    --color-accent-brown: #c49b64;
+    --color-general-white-orange: #ffe566;
+    --color-general-black-real: #000000;
+    --color-general-white: #ffffff;
+    --color-accent-orange: #ff5500;
 
-    --color-text-primary: #f3ead2;
-    --color-text-secondary: #b9b0a1;
-    --color-text-muted: #827c72;
-    --color-accent: #f08a24;
-    --color-accent-strong: #ffb35a;
-    --color-danger: #ff5c36;
-    --color-border: rgba(255, 255, 255, 0.12);
-    --color-border-accent: rgba(240, 138, 36, 0.7);
+    --color-bg-primary: var(--color-general-black-real);
+    --color-bg-overlay: rgba(0, 0, 0, 0.7);
+    --color-bg-surface: rgba(62, 62, 62, 0.35);
+    --color-bg-surface-strong: rgba(62, 62, 62, 1);
+    --color-bg-control: rgba(62, 62, 62, 0.35);
+    --color-bg-control-hover: var(--color-general-par);
+    --color-bg-control-active: rgba(255, 85, 0, 0.06);
+
+    --color-text-primary: var(--color-general-white-spanish);
+    --color-text-secondary: rgba(233, 226, 191, 0.4);
+    --color-text-muted: rgba(255, 255, 255, 0.5);
+    --color-text-inverted: var(--color-general-black-real);
+
+    --color-accent: var(--color-accent-orange);
+    --color-accent-soft: var(--color-general-white-orange);
+    --color-accent-strong: var(--color-accent-brown);
+    --color-danger: #ff5500;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-border-strong: var(--color-general-par);
+    --color-border-accent: rgba(255, 85, 0, 0.4);
 }
 
 html {
