@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router';
 
 import RootLayout from './layouts/root-layout';
 
@@ -6,8 +6,12 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <RootLayout />,
-        errorElement: <div>Error Ellement</div>,
+        errorElement: <div>Error Element</div>,
         children: [
+            {
+                index: true,
+                element: <Navigate to="/premium" replace />,
+            },
             {
                 path: 'premium',
                 lazy: async () => {
@@ -17,9 +21,10 @@ const router = createBrowserRouter([
                 },
             },
             {
-                path: 'collections',
+                path: 'collection',
                 lazy: async () => {
-                    const { default: Component } = { default: () => <div>Collections</div> }
+                    const { default: Component } = { default: () => <div>Collection</div> };
+
                     return { Component };
                 },
             },
