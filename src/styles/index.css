@@ -31,6 +31,11 @@
     --color-border: rgba(255, 255, 255, 0.1);
     --color-border-strong: var(--color-general-par);
     --color-border-accent: rgba(255, 85, 0, 0.4);
+
+    --layout-content-width: 1138px;
+    --layout-page-gutter: clamp(16px, 4vw, 40px);
+    --layout-lip-top-height: 183px;
+    --layout-lip-bottom-height: 148px;
 }
 
 html {

@@ -1,0 +1,4 @@
+.root {
+    width: min(100% - var(--layout-page-gutter) * 2, var(--layout-content-width));
+    margin: 0 auto;
+}

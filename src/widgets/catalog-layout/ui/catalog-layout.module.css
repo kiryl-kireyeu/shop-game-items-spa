@@ -1,0 +1,51 @@
+.root {
+    display: grid;
+    gap: 24px;
+}
+
+.controls {
+    min-height: 40px;
+}
+
+.results {
+    position: relative;
+}
+
+.results::before,
+.results::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    content: "";
+    pointer-events: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.results::before {
+    top: calc(var(--layout-lip-top-height) / -2);
+    height: var(--layout-lip-top-height);
+    background-image: url("/lipBigTop.svg");
+}
+
+.results::after {
+    bottom: calc(var(--layout-lip-bottom-height) / -2);
+    height: var(--layout-lip-bottom-height);
+    background-image: url("/lipBigBottom.svg");
+}
+
+.resultsContent {
+    position: relative;
+    z-index: 1;
+    min-height: 320px;
+}
+
+@media (max-width: 768px) {
+    .results::before,
+    .results::after {
+        display: none;
+    }
+}
