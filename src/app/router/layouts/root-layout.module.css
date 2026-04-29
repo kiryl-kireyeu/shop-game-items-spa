@@ -1,0 +1,16 @@
+.root {
+    min-width: 320px;
+    min-height: 100vh;
+    padding: var(--space-7) var(--page-gutter);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    background-image: url('/app_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+}
