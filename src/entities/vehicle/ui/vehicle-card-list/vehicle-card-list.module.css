@@ -1,1 +1,28 @@
-/* Vehicle card list styles. */
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0;
+    padding: 41px;
+    list-style: none;
+}
+
+.item {
+    width: 100%;
+    max-width: 518px;
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .list {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .list {
+        padding: 20px;
+    }
+}

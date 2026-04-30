@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import { vehiclesApi } from '@/entities/vehicle/api/vehicles-api';
 import { isCatalogType } from '@/entities/vehicle/model/guards';
 import type { Vehicle, VehicleType } from '@/entities/vehicle/model/types';
+import VehicleCardList from '@/entities/vehicle/ui/vehicle-card-list/vehicle-card-list';
 import VehicleTypeFilter from '@/features/vehicle-type-filter/ui/vehicle-type-filter';
 import PageTitle from '@/shared/ui/page-title/page-title';
 import CatalogNavigation from '@/widgets/catalog-navigation/ui/catalog-navigation';
@@ -83,13 +84,7 @@ const CatalogPage = () => {
                     {filteredVehicles.length === 0 ? (
                         <p className={styles.empty}>Техника не найдена</p>
                     ) : (
-                        <ul className={styles.list}>
-                            {filteredVehicles.map((vehicle) => (
-                                <li className={styles.item} key={vehicle.id}>
-                                    {vehicle.title}
-                                </li>
-                            ))}
-                        </ul>
+                        <VehicleCardList vehicles={filteredVehicles} />
                     )}
                 </div>
             </div>
