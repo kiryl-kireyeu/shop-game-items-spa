@@ -15,6 +15,13 @@
     overflow: hidden;
     color: var(--color-text-primary);
     background-color: var(--color-bg-surface);
+    background-image:
+        url("/cards/red-rain.png"),
+        url("/cards/flag.png"),
+        url("/cards/card_bg.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: right top, left top, center;
+    background-size: 222px 132px, 266px 222px, 100% 100%;
     border: 1px solid var(--color-border);
 }
 
