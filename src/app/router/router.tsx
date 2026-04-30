@@ -1,7 +1,5 @@
 import { Navigate, createBrowserRouter } from 'react-router';
 
-import CatalogLayout from '@/widgets/catalog-layout/ui/catalog-layout';
-
 import RootLayout from './layouts/root-layout';
 
 const router = createBrowserRouter([
@@ -15,29 +13,12 @@ const router = createBrowserRouter([
                 element: <Navigate to="/premium" replace />,
             },
             {
-                element: <CatalogLayout />,
-                children: [
-                    {
-                        path: 'premium',
-                        lazy: async () => {
-                            const { default: Component } = await import(
-                                '@/pages/premium/ui/premium-page'
-                            );
+                path: ':catalogType',
+                lazy: async () => {
+                    const { default: Component } = await import('@/pages/catalog/ui/catalog-page');
 
-                            return { Component };
-                        },
-                    },
-                    {
-                        path: 'collection',
-                        lazy: async () => {
-                            const { default: Component } = await import(
-                                '@/pages/collection/ui/collection-page'
-                            );
-
-                            return { Component };
-                        },
-                    },
-                ],
+                    return { Component };
+                },
             },
             {
                 path: '*',
