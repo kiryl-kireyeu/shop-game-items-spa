@@ -5,6 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 0px;
+    background: rgba(0, 0, 0, 0.5);
 }
 .tab {
     display: flex;
