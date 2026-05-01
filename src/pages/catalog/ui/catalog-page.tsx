@@ -71,7 +71,10 @@ const CatalogPage = () => {
             <CatalogNavigation />
 
             <div className={styles.controls}>
-                <p className={styles.summary}>Найдено: {filteredVehicles.length}</p>
+                <p className={styles.summary}>
+                    Показано:
+                    <span>{filteredVehicles.length}</span>
+                </p>
                 <VehiclePriceSort />
                 <VehicleTypeFilter
                     selectedTypes={selectedVehicleTypes}

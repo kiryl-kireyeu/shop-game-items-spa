@@ -18,7 +18,7 @@
     bottom: 0;
     left: 0;
     height: 2px;
-    content: "";
+    content: '';
     pointer-events: none;
     background-image:
         linear-gradient(rgba(242, 242, 247, 0.05), rgba(242, 242, 247, 0.05)),
@@ -43,7 +43,7 @@
     left: 0;
     z-index: 0;
     width: 100%;
-    content: "";
+    content: '';
     pointer-events: none;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,13 +53,13 @@
 .results::before {
     top: calc(var(--layout-lip-top-height) / -2);
     height: var(--layout-lip-top-height);
-    background-image: url("/lipBigTop.svg");
+    background-image: url('/lipBigTop.svg');
 }
 
 .results::after {
     bottom: calc(var(--layout-lip-bottom-height) / -2);
     height: var(--layout-lip-bottom-height);
-    background-image: url("/lipBigBottom.svg");
+    background-image: url('/lipBigBottom.svg');
 }
 
 .resultsContent {
@@ -77,14 +77,21 @@
 .empty,
 .notFound {
     margin: 0;
-    color: var(--color-text-secondary);
+    color: var(--color-general-white-orange);
     font-family: var(--font-family-condensed);
-    font-size: 16px;
-    line-height: 1.4;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 0.7;
 }
 
 .summary {
     flex: 1;
+}
+.summary span {
+    margin-left: 11px;
+    color: var(--color-general-white-spanish);
 }
 
 @media (max-width: 1024px) {
