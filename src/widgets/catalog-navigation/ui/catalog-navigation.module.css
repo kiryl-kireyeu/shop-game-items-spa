@@ -37,7 +37,7 @@
             rgba(255, 85, 0, 0.2) 51.04%,
             rgba(255, 0, 0, 0) 100%
         ),
-        linear-gradient(#ff5500, #ff5500), linear-gradient(#ff5500, #ff5500);
+        linear-gradient(var(--color-accent-orange), var(--color-accent-orange)), linear-gradient(var(--color-accent-orange), var(--color-accent-orange));
     background-repeat: no-repeat;
     background-position:
         left center,
