@@ -8,7 +8,7 @@ const VehiclePriceSort = () => {
             <IconToggleButton
                 active={false} 
                 label='Сортировка по цене'
-                iconSrc='/icons/lightTank.svg'
+                iconSrc='/icons/arrow_down.svg'
                 onClick={() => {}}
             />
         </div>
