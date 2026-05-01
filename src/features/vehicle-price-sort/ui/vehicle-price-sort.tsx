@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import clsx from 'clsx';
 
 import type { SortDirection } from '@/entities/vehicle/model/types';
@@ -6,19 +5,20 @@ import IconToggleButton from '@/shared/ui/icon-toggle-button/icon-toggle-button'
 
 import styles from './vehicle-price-sort.module.css';
 
-const VehiclePriceSort = () => {
-    const [direction, setDirection] = useState<SortDirection>('asc');
+type VehiclePriceSortProps = {
+    direction: SortDirection;
+    isPending?: boolean;
+    onToggle: () => void;
+};
 
-    const handleToggleDirection = () => {
-        setDirection((currentDirection) => (currentDirection === 'asc' ? 'desc' : 'asc'));
-    };
-
+const VehiclePriceSort = ({ direction, isPending = false, onToggle }: VehiclePriceSortProps) => {
     return (
         <div className={styles.root}>
             <span className={styles.label}>Сортировать:</span>
             <IconToggleButton
                 active={false}
                 disableHover
+                aria-busy={isPending}
                 label={
                     direction === 'asc'
                         ? 'Сортировка по цене: по возрастанию'
@@ -26,7 +26,7 @@ const VehiclePriceSort = () => {
                 }
                 iconClassName={clsx(styles.icon, direction === 'desc' && styles.iconDesc)}
                 iconSrc="/icons/arrow_down.svg"
-                onClick={handleToggleDirection}
+                onClick={onToggle}
             />
         </div>
     );

@@ -5,17 +5,25 @@ import { vehiclesApi } from '@/entities/vehicle/api/vehicles-api';
 import { isCatalogType } from '@/entities/vehicle/model/guards';
 import type { Vehicle, VehicleType } from '@/entities/vehicle/model/types';
 import VehicleCardList from '@/entities/vehicle/ui/vehicle-card-list/vehicle-card-list';
+import { useSortedVehicles } from '@/features/vehicle-price-sort/model/use-sorted-vehicles';
+import { useVehiclePriceSort } from '@/features/vehicle-price-sort/model/use-vehicle-price-sort';
+import VehiclePriceSort from '@/features/vehicle-price-sort/ui/vehicle-price-sort';
 import VehicleTypeFilter from '@/features/vehicle-type-filter/ui/vehicle-type-filter';
 import PageTitle from '@/shared/ui/page-title/page-title';
 import CatalogNavigation from '@/widgets/catalog-navigation/ui/catalog-navigation';
 
 import styles from './catalog-page.module.css';
-import VehiclePriceSort from '@/features/vehicle-price-sort/ui/vehicle-price-sort';
 
 const CatalogPage = () => {
     const { catalogType } = useParams();
     const [vehicles, setVehicles] = useState<Vehicle[]>([]);
     const [selectedVehicleTypes, setSelectedVehicleTypes] = useState<VehicleType[]>([]);
+    
+    const {
+        direction: sortDirection,
+        isPending: isSortPending,
+        handleToggleDirection,
+    } = useVehiclePriceSort();
 
     const isValidCatalogType = isCatalogType(catalogType);
 
@@ -55,6 +63,8 @@ const CatalogPage = () => {
         return vehicles.filter((vehicle) => selectedVehicleTypes.includes(vehicle.vehicle_type));
     }, [selectedVehicleTypes, vehicles]);
 
+    const sortedVehicles = useSortedVehicles(filteredVehicles, sortDirection);
+
     if (!isValidCatalogType) {
         return (
             <section className={styles.root}>
@@ -73,9 +83,13 @@ const CatalogPage = () => {
             <div className={styles.controls}>
                 <p className={styles.summary}>
                     Показано:
-                    <span>{filteredVehicles.length}</span>
+                    <span>{sortedVehicles.length}</span>
                 </p>
-                <VehiclePriceSort />
+                <VehiclePriceSort
+                    direction={sortDirection}
+                    isPending={isSortPending}
+                    onToggle={handleToggleDirection}
+                />
                 <VehicleTypeFilter
                     selectedTypes={selectedVehicleTypes}
                     onToggle={handleVehicleTypeToggle}
@@ -84,10 +98,10 @@ const CatalogPage = () => {
 
             <div className={styles.results}>
                 <div className={styles.resultsContent}>
-                    {filteredVehicles.length === 0 ? (
+                    {sortedVehicles.length === 0 ? (
                         <p className={styles.empty}>Техника не найдена</p>
                     ) : (
-                        <VehicleCardList vehicles={filteredVehicles} />
+                        <VehicleCardList vehicles={sortedVehicles} />
                     )}
                 </div>
             </div>
