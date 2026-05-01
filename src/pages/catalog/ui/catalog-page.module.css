@@ -68,15 +68,39 @@
     background-image: url('/lipBigBottom.svg');
 }
 
+.resultsScroll {
+    position: relative;
+    z-index: 1;
+    height: min(800px, calc(100dvh - 220px));
+    min-height: 320px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: rgba(242, 242, 247, 0.35) rgba(242, 242, 247, 0.08);
+    scrollbar-width: thin;
+}
+
+.resultsScroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resultsScroll::-webkit-scrollbar-track {
+    background: rgba(242, 242, 247, 0.08);
+}
+
+.resultsScroll::-webkit-scrollbar-thumb {
+    background: rgba(242, 242, 247, 0.35);
+    border-radius: 1px;
+}
+
+.resultsScroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(242, 242, 247, 0.5);
+}
+
 .resultsContent {
     position: relative;
     z-index: 1;
     display: grid;
     gap: 16px;
-    height: min(800px, calc(100dvh - 220px));
-    min-height: 320px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
 }
 
 .summary,
@@ -132,7 +156,7 @@
         display: none;
     }
 
-    .resultsContent {
+    .resultsScroll {
         height: auto;
         min-height: 0;
         overflow-y: visible;

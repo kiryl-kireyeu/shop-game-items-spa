@@ -43,13 +43,15 @@ const CatalogPage = () => {
             </Container>
 
             <div className={styles.results}>
-                <Container className={styles.resultsContent}>
-                    {isLoading ? (
-                        <p className={styles.loading}>Loading....</p>
-                    ) : (
-                        <VehicleCardList vehicles={sortedVehicles} />
-                    )}
-                </Container>
+                <div className={styles.resultsScroll}>
+                    <Container className={styles.resultsContent}>
+                        {isLoading ? (
+                            <p className={styles.loading}>Loading....</p>
+                        ) : (
+                            <VehicleCardList vehicles={sortedVehicles} />
+                        )}
+                    </Container>
+                </div>
             </div>
         </section>
     );
