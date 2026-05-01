@@ -16,6 +16,17 @@
     min-width: 0;
 }
 
+.empty {
+    margin: 0;
+    color: var(--color-general-white-orange);
+    font-family: var(--font-family-condensed);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 0.7;
+}
+
 @media (max-width: 1024px) {
     .list {
         grid-template-columns: repeat(1, minmax(0, 1fr));

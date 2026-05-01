@@ -74,8 +74,8 @@
 }
 
 .summary,
-.empty,
-.notFound {
+.notFound,
+.loading {
     margin: 0;
     color: var(--color-general-white-orange);
     font-family: var(--font-family-condensed);

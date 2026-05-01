@@ -7,6 +7,10 @@ type VehicleCardListProps = {
 };
 
 const VehicleCardList = ({ vehicles }: VehicleCardListProps) => {
+    if (vehicles.length === 0) {
+        return <p className={styles.empty}>Техника не найдена</p>;
+    }
+
     return (
         <ul className={styles.list}>
             {vehicles.map((vehicle) => (
