@@ -1,13 +1,24 @@
 .root {
     min-width: 320px;
-    min-height: 100vh;
-    padding-block: clamp(32px, 6.2vh, 67px);
+    height: 100dvh;
+    min-height: 100dvh;
+    padding-block: 60px 53px;
+    overflow: hidden;
     color: var(--color-text-primary);
     font-family: var(--font-family-base);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
+    background-color: var(--color-bg-primary);
     background-image: url('/app_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+    .root {
+        height: auto;
+        padding-block: 32px;
+        overflow: visible;
+    }
 }

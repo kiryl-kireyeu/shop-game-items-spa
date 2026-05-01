@@ -1,6 +1,9 @@
 .root {
     display: grid;
-    gap: 24px;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0;
+    height: 100%;
+    min-height: 0;
 }
 
 .content {
@@ -40,6 +43,7 @@
 
 .results {
     position: relative;
+    min-height: 0;
 }
 
 .results::before,
@@ -71,7 +75,7 @@
 .resultsScroll {
     position: relative;
     z-index: 1;
-    height: min(800px, calc(100dvh - 220px));
+    height: min(800px, 100%);
     min-height: 320px;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -131,6 +135,13 @@
 }
 
 @media (max-width: 1024px) {
+    .root {
+        display: grid;
+        grid-template-rows: none;
+        height: auto;
+        min-height: 0;
+    }
+
     .content {
         position: sticky;
         top: 0;
