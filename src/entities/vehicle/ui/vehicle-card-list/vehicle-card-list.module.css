@@ -14,6 +14,10 @@
     width: 100%;
     max-width: 518px;
     min-width: 0;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: vehicle-card-enter 240ms ease-out forwards;
+    animation-delay: var(--card-enter-delay);
 }
 
 .empty {
@@ -37,5 +41,25 @@
 @media (max-width: 640px) {
     .list {
         padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .item {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+
+@keyframes vehicle-card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
