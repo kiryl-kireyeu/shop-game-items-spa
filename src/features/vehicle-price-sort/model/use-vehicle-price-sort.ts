@@ -21,10 +21,9 @@ export const useVehiclePriceSort = () => {
         startTransition(() => {
             setSearchParams(
                 (currentSearchParams) => {
-                    const nextSearchParams = new URLSearchParams(currentSearchParams);
-                    nextSearchParams.set(SORT_PARAM_NAME, nextDirection);
+                    currentSearchParams.set(SORT_PARAM_NAME, nextDirection);
 
-                    return nextSearchParams;
+                    return currentSearchParams;
                 },
                 { replace: true },
             );

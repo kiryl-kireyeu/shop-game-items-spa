@@ -5,13 +5,23 @@ import { vehicleTypeFilterItems } from '../model/filter-items';
 import styles from './vehicle-type-filter.module.css';
 
 type VehicleTypeFilterProps = {
+    isPending?: boolean;
     selectedTypes: VehicleType[];
     onToggle: (type: VehicleType) => void;
 };
 
-const VehicleTypeFilter = ({ selectedTypes, onToggle }: VehicleTypeFilterProps) => {
+const VehicleTypeFilter = ({
+    isPending = false,
+    selectedTypes,
+    onToggle,
+}: VehicleTypeFilterProps) => {
     return (
-        <div className={styles.root} role="group" aria-label="Фильтр по типу техники">
+        <div
+            className={styles.root}
+            role="group"
+            aria-busy={isPending}
+            aria-label="Фильтр по типу техники"
+        >
             <span className={styles.label}>Показать:</span>
 
             <div className={styles.list}>

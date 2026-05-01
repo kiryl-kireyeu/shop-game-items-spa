@@ -7,5 +7,6 @@ export const useSortedVehicles = (
     vehicles: Vehicle[],
     direction: SortDirection,
 ): Vehicle[] => {
+    // useMemo avoids sorting the same filtered list again until data or direction changes.
     return useMemo(() => sortVehiclesByCurrentPrice(vehicles, direction), [direction, vehicles]);
 };
