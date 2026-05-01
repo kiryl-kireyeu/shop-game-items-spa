@@ -3,6 +3,12 @@
     gap: 24px;
 }
 
+.content {
+    position: relative;
+    display: grid;
+    gap: 24px;
+}
+
 .controls {
     position: relative;
     display: flex;
@@ -101,6 +107,26 @@
 }
 
 @media (max-width: 1024px) {
+    .content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding-block: 8px 16px;
+        isolation: isolate;
+    }
+
+    .content::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        z-index: -1;
+        width: 100vw;
+        content: '';
+        backdrop-filter: blur(10px);
+        transform: translateX(-50%);
+    }
+
     .results::before,
     .results::after {
         display: none;

@@ -1,4 +1,5 @@
 import VehicleCardList from '@/entities/vehicle/ui/vehicle-card-list/vehicle-card-list';
+import Container from '@/shared/ui/container/container';
 import PageTitle from '@/shared/ui/page-title/page-title';
 import CatalogNavigation from '@/widgets/catalog-navigation/ui/catalog-navigation';
 
@@ -26,27 +27,29 @@ const CatalogPage = () => {
 
     return (
         <section className={styles.root}>
-            <PageTitle title="Техника" />
-            <CatalogNavigation />
+            <Container className={styles.content}>
+                <PageTitle title="Техника" />
+                <CatalogNavigation />
 
-            <CatalogPageControls
-                count={sortedVehicles.length}
-                isFilterPending={isFilterPending}
-                isSortPending={isSortPending}
-                selectedVehicleTypes={selectedVehicleTypes}
-                sortDirection={sortDirection}
-                onSortToggle={handleToggleDirection}
-                onVehicleTypeToggle={handleVehicleTypeToggle}
-            />
+                <CatalogPageControls
+                    count={sortedVehicles.length}
+                    isFilterPending={isFilterPending}
+                    isSortPending={isSortPending}
+                    selectedVehicleTypes={selectedVehicleTypes}
+                    sortDirection={sortDirection}
+                    onSortToggle={handleToggleDirection}
+                    onVehicleTypeToggle={handleVehicleTypeToggle}
+                />
+            </Container>
 
             <div className={styles.results}>
-                <div className={styles.resultsContent}>
+                <Container className={styles.resultsContent}>
                     {isLoading ? (
                         <p className={styles.loading}>Loading....</p>
                     ) : (
                         <VehicleCardList vehicles={sortedVehicles} />
                     )}
-                </div>
+                </Container>
             </div>
         </section>
     );
