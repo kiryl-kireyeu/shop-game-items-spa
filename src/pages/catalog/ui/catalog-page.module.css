@@ -42,7 +42,7 @@
     z-index: 1;
     display: grid;
     gap: 16px;
-    height: 800px;
+    height: min(800px, calc(100dvh - 220px));
     min-height: 320px;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -58,7 +58,7 @@
     line-height: 1.4;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .results::before,
     .results::after {
         display: none;
@@ -66,6 +66,7 @@
 
     .resultsContent {
         height: auto;
+        min-height: 0;
         overflow-y: visible;
     }
 }

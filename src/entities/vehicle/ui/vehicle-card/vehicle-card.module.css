@@ -2,8 +2,8 @@
     position: relative;
     display: grid;
     grid-template-areas:
-        "text image"
-        "price image";
+        'text image'
+        'price image';
     grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
     column-gap: 16px;
@@ -14,21 +14,28 @@
     padding-block: 11px;
     overflow: hidden;
     color: var(--color-text-primary);
-    background-color: var(--color-bg-surface);
-    background-image:
-        url("/cards/red-rain.png"),
-        url("/cards/flag.png"),
-        url("/cards/card_bg.png");
+    background-image: url('/cards/red-rain.png'), url('/cards/flag.png'), url('/cards/card_bg.png');
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: right top, left top, center;
-    background-size: 222px 132px, 266px 222px, 100% 100%;
-    border: 1px solid var(--color-border);
+    background-position:
+        right top,
+        left top,
+        center;
+    background-size:
+        222px 132px,
+        266px 222px,
+        100% 100%;
 }
 
 .discount {
     position: absolute;
     top: 16px;
     right: 16px;
+    font-family: var(--font-family-condensed);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: var(--color-general-white-spanish);
     z-index: 2;
 }
 
@@ -41,6 +48,12 @@
 
 .title {
     margin: 0 0 8px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    font-family: var(--font-family-condensed);
+    color: var(--color-general-white-spanish);
 }
 
 .imageWrapper {
@@ -64,6 +77,13 @@
     line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    font-family: 'ZurichCond' var(--font-family-condensed);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: var(--color-general-par);
 }
 
 .priceRow {
@@ -77,18 +97,35 @@
 
 .oldPrice {
     color: var(--color-text-secondary);
+
+    font-family: 'ZurichCond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    text-decoration-line: line-through;
+
+    color: var(--color-general-par);
 }
 
 .price {
     color: var(--color-text-primary);
+    font-family: 'ZurichCond' var(--font-family-condensed);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: var(--color-accent-brown);
 }
 
 @media (max-width: 640px) {
     .card {
         grid-template-areas:
-            "text"
-            "image"
-            "price";
+            'text'
+            'image'
+            'price';
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: auto auto auto;
         row-gap: 12px;
