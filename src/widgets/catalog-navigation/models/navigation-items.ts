@@ -3,7 +3,7 @@ export type NavigationT = {
     to: string;
 };
 
-export const navigationItems: NavigationT[] = [
+export const navigationItems = [
     {
         title: 'Премиальная',
         to: '/premium',
@@ -12,4 +12,4 @@ export const navigationItems: NavigationT[] = [
         title: 'Коллекционная',
         to: '/collection',
     },
-];
+] as const satisfies readonly NavigationT[];

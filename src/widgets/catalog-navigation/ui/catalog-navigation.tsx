@@ -1,8 +1,6 @@
-import { NavLink } from 'react-router';
-
-import { navigationItems, type NavigationT } from '../models/navigation-items';
+import { navigationItems } from '../models/navigation-items';
 import styles from './catalog-navigation.module.css';
-import clsx from 'clsx';
+import TabNavigation from './tab-navigation';
 
 const CatalogNavigation = () => {
     return (
@@ -15,11 +13,3 @@ const CatalogNavigation = () => {
 };
 
 export default CatalogNavigation;
-
-export const TabNavigation = ({ to, title }: NavigationT) => {
-    return (
-        <NavLink to={to} className={({ isActive }) => clsx(styles.tab, isActive && styles.active)}>
-            <span>{title}</span>
-        </NavLink>
-    );
-};
