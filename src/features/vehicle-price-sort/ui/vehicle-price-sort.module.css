@@ -13,3 +13,11 @@
     font-style: normal;
     opacity: 0.7;
 }
+
+.icon {
+    transition: transform 160ms ease;
+}
+
+.iconDesc {
+    transform: rotate(180deg);
+}

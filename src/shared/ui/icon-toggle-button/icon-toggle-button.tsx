@@ -6,19 +6,23 @@ import { preload } from 'react-dom';
 
 type IconToggleButtonProps = {
     label: string;
-    iconSrc: string;
     active?: boolean;
+    disableHover?: boolean;
+    iconSrc: string;
+    iconClassName?: string;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'aria-label' | 'aria-pressed' | 'children'>;
 
 preload("/icons/toggle_off.svg", { as: 'image' });
 preload("/icons/toggle_on.svg", { as: 'image' });
 
 const IconToggleButton = ({
-    iconSrc,
+    type = 'button',
     label,
     active = false,
+    iconSrc,
     className,
-    type = 'button',
+    disableHover = false,
+    iconClassName,
     ...props
 }: IconToggleButtonProps) => {
     return (
@@ -27,10 +31,20 @@ const IconToggleButton = ({
             title={label}
             aria-label={label}
             aria-pressed={active}
-            className={clsx(styles.root, active && styles.rootActive, className)}
+            className={clsx(
+                styles.root,
+                active && styles.rootActive,
+                disableHover && styles.hoverDisabled,
+                className,
+            )}
             {...props}
         >
-            <img alt="icon" aria-hidden="true" className={styles.icon} src={iconSrc} />
+            <img
+                alt=""
+                aria-hidden="true"
+                className={clsx(styles.icon, iconClassName)}
+                src={iconSrc}
+            />
         </button>
     );
 };

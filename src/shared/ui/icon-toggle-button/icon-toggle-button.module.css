@@ -36,7 +36,7 @@
 }
 
 @media (hover: hover) {
-    .root:hover:not(:disabled) {
+    .root:hover:not(:disabled):not(.hoverDisabled) {
         background-image: url("/icons/toggle_on.svg");
     }
 }
