@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'ZurichCond';
+    src: url('../assets/zurichcond.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --font-family-base: Arial, Helvetica, sans-serif;
     --font-family-condensed: "Roboto Condensed", "Arial Narrow", Arial, Helvetica, sans-serif;
+    --font-family-zurich-cond: "ZurichCond", var(--font-family-condensed);
     --font-family-accent: var(--font-family-condensed);
 
     --color-general-white-spanish: #E9E2BF;

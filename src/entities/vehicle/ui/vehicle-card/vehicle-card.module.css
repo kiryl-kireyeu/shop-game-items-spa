@@ -77,7 +77,7 @@
     line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    font-family: 'ZurichCond' var(--font-family-condensed);
+    font-family: var(--font-family-zurich-cond);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -98,7 +98,7 @@
 .oldPrice {
     color: var(--color-text-secondary);
 
-    font-family: 'ZurichCond';
+    font-family: var(--font-family-zurich-cond);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -111,7 +111,7 @@
 
 .price {
     color: var(--color-text-primary);
-    font-family: 'ZurichCond' var(--font-family-condensed);
+    font-family: var(--font-family-zurich-cond);
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
