@@ -10,6 +10,7 @@ import PageTitle from '@/shared/ui/page-title/page-title';
 import CatalogNavigation from '@/widgets/catalog-navigation/ui/catalog-navigation';
 
 import styles from './catalog-page.module.css';
+import VehiclePriceSort from '@/features/vehicle-price-sort/ui/vehicle-price-sort';
 
 const CatalogPage = () => {
     const { catalogType } = useParams();
@@ -35,13 +36,11 @@ const CatalogPage = () => {
 
         let shouldUpdateState = true;
 
-        vehiclesApi
-            .getByCatalogType(catalogType)
-            .then((nextVehicles) => {
-                if (shouldUpdateState) {
-                    setVehicles(nextVehicles);
-                }
-            });
+        vehiclesApi.getByCatalogType(catalogType).then((nextVehicles) => {
+            if (shouldUpdateState) {
+                setVehicles(nextVehicles);
+            }
+        });
 
         return () => {
             shouldUpdateState = false;
@@ -73,6 +72,7 @@ const CatalogPage = () => {
 
             <div className={styles.controls}>
                 <p className={styles.summary}>Найдено: {filteredVehicles.length}</p>
+                <VehiclePriceSort />
                 <VehicleTypeFilter
                     selectedTypes={selectedVehicleTypes}
                     onToggle={handleVehicleTypeToggle}

@@ -4,7 +4,32 @@
 }
 
 .controls {
-    min-height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 34px;
+    padding-bottom: 24px;
+    gap: 16px;
+}
+
+.controls::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    content: "";
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(242, 242, 247, 0.05), rgba(242, 242, 247, 0.05)),
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    background-repeat: no-repeat;
+    background-position:
+        top left,
+        bottom left;
+    background-size:
+        100% 1px,
+        100% 1px;
 }
 
 .results {
@@ -56,6 +81,10 @@
     font-family: var(--font-family-condensed);
     font-size: 16px;
     line-height: 1.4;
+}
+
+.summary {
+    flex: 1;
 }
 
 @media (max-width: 1024px) {

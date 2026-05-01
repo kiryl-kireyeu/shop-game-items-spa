@@ -13,9 +13,3 @@
     font-style: normal;
     opacity: 0.7;
 }
-
-.list {
-    display: inline-flex;
-    align-items: center;
-    gap: 11px;
-}
