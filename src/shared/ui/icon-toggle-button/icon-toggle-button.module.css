@@ -1,0 +1,42 @@
+.root {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 20px;
+    padding: 0;
+    background-image: url("/icons/toggle_off.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+    will-change: background;
+}
+
+.rootActive {
+    background-image: url("/icons/toggle_on.svg");
+}
+
+.root:focus-visible {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 2px;
+}
+
+.root:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+    .root:hover:not(:disabled):not(.hoverDisabled) {
+        background-image: url("/icons/toggle_on.svg");
+    }
+}

@@ -1,0 +1,23 @@
+.root {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.label {
+    color: var(--color-general-white-orange);
+    font-family: var(--font-family-condensed);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    font-style: normal;
+    opacity: 0.7;
+}
+
+.icon {
+    transition: transform 160ms ease;
+}
+
+.iconDesc {
+    transform: rotate(180deg);
+}
