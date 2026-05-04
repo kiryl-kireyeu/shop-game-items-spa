@@ -4,7 +4,7 @@ import { wait } from '@/shared/lib/wait';
 import { getVehiclesByCatalogType } from '../lib/get-vehicles-by-catalog-type';
 import type { CatalogType, Vehicle } from '../model/types';
 
-const MOCK_API_DELAY_MS = 1000;
+const MOCK_API_DELAY_MS = 500;
 const vehicles = vehiclesData.data as Vehicle[];
 
 export const vehiclesApi = {
